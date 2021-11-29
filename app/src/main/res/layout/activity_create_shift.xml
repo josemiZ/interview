@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/purple_500"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_start_date_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_start_date"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_start_date_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_please_enter_date"
+                    app:layout_constraintBottom_toBottomOf="@id/ib_start_date"
+                    app:layout_constraintEnd_toStartOf="@id/ib_start_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_start_date_title" />
+
+                <ImageButton
+                    android:id="@+id/ib_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@string/txt_select_end_date"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_baseline_calendar_today_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_start_date_description"
+                    app:layout_constraintTop_toBottomOf="@id/tv_start_date_title" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/br_start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="ib_start_date,tv_start_date_description" />
+
+                <TextView
+                    android:id="@+id/tv_start_time_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txt_please_enter_time"
+                    app:layout_constraintBottom_toBottomOf="@id/ib_start_time"
+                    app:layout_constraintEnd_toStartOf="@id/ib_start_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/br_start_date" />
+
+                <ImageButton
+                    android:id="@+id/ib_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@string/txt_select_time"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_baseline_access_time_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_start_time_description"
+                    app:layout_constraintTop_toBottomOf="@id/br_start_date" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/br_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="ib_start_time,tv_start_time_description" />
+
+                <TextView
+                    android:id="@+id/tv_end_date_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_end_date"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/br_start_time" />
+
+                <TextView
+                    android:id="@+id/tv_end_date_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_please_enter_date"
+                    app:layout_constraintBottom_toBottomOf="@id/ib_end_date"
+                    app:layout_constraintEnd_toStartOf="@id/ib_end_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_end_date_title" />
+
+                <ImageButton
+                    android:id="@+id/ib_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@string/txt_select_date"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_baseline_calendar_today_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_end_date_description"
+                    app:layout_constraintTop_toBottomOf="@id/tv_end_date_title" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/br_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="ib_end_date,tv_end_date_description" />
+
+                <TextView
+                    android:id="@+id/tv_end_time_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txt_please_enter_time"
+                    app:layout_constraintBottom_toBottomOf="@id/ib_end_time"
+                    app:layout_constraintEnd_toStartOf="@id/ib_end_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/br_end_date" />
+
+                <ImageButton
+                    android:id="@+id/ib_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@string/txt_select_end_time"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_baseline_access_time_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_end_time_description"
+                    app:layout_constraintTop_toBottomOf="@id/br_end_date" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/br_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tv_end_time_description,ib_end_time" />
+
+                <TextView
+                    android:id="@+id/tv_employee_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_employee"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/br_end_time" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_employee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/txt_select_employee"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toStartOf="@id/br_spinners"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_employee_title" />
+
+                <TextView
+                    android:id="@+id/tv_role_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_role"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sp_employee" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_role"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/txt_select_role"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toStartOf="@id/br_spinners"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_role_title" />
+
+                <TextView
+                    android:id="@+id/tv_color_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_color"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sp_role" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sp_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/txt_select_color"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/br_spinners"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_color_title" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/br_spinners"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="sp_employee,sp_role,sp_color" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

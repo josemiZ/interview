@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Interview</string>
+    <string name="txt_add_shift">Add shift</string>
+    <string name="txt_start_date">Start Date</string>
+    <string name="txt_please_enter_date">Please enter date</string>
+    <string name="txt_select_date">Select date</string>
+    <string name="txt_please_enter_time">Please enter time</string>
+    <string name="txt_select_time">Select Time</string>
+    <string name="txt_end_date">End date</string>
+    <string name="txt_employee">Employee</string>
+    <string name="txt_role">Role</string>
+    <string name="txt_color">Color</string>
+    <string name="txt_select_employee">Select Employee</string>
+    <string name="txt_select_end_date">Select end date</string>
+    <string name="txt_select_end_time">Select end time</string>
+    <string name="txt_select_role">Select role</string>
+    <string name="txt_select_color">Select color</string>
+    <string name="txt_save">Save</string>
+    <string-array name="employees_array">
+        <item>Anna</item>
+        <item>Anton</item>
+        <item>Eugene</item>
+        <item>Keyvan</item>
+    </string-array>
+    <string-array name="roles_array">
+        <item>Waitress</item>
+        <item>Prep</item>
+        <item>Cook</item>
+        <item>Front of house</item>
+    </string-array>
+    <string-array name="colors_array">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+</resources>
